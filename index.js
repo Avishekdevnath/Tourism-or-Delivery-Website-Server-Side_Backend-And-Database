@@ -15,7 +15,7 @@ app.use(express.json());
 // pass: 6nlk0iHwMqtUcDVN
 
 
-const uri = "mongodb+srv://vromon:6nlk0iHwMqtUcDVN@cluster0.kq3to.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.kq3to.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 async function run() {
     try {
